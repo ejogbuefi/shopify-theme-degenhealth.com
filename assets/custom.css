@@ -1,0 +1,113 @@
+/* Additional CSS - Vinno 20220124 */
+
+/* Newsletter Section */
+.newsletter__wrapper {
+  background-image: linear-gradient(60deg,rgba(170,1,1,0.62) 0%,#771562 100%) !important;
+}
+.newsletter--narrow .newsletter__wrapper, .newsletter:not(.newsletter--narrow) .newsletter__wrapper.color-background-1 {
+  margin: 0 !important;
+  padding: 100px 0;
+}
+.newsletter__subheading {
+  font-family: 'Poppins',Helvetica,Arial,Lucida,sans-serif;
+  max-width: none !important;
+}
+.newsletter h2, .newsletter__subheading p, .field__label {
+  color: #ffffff !important;
+}
+.newsletter .field__input {
+  border: solid 1px #ffffff;
+  box-shadow: none;
+}
+.newsletter-form__field-wrapper .field__button {
+  color: #ffffff;
+}
+
+/* Multicolumn Beets, etc */
+.multicolumn-card {
+  padding: 50px 10px;
+  margin: 0 15px;
+}
+.multicolumn-card p, .multicolumn-card h3, .multicolumn-list__item .link {
+  color: #fff;
+}
+.template-index .section-BEETS .link, .template-index .section-LIONSMANE .link{
+  border: solid 1px #fff;
+  margin-top: 2rem !important;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  font-size: 14px !important;
+}
+.template-index .section-VEGASGIVEAWAY .link {
+  border: solid 1px #333;
+  margin-top: 2rem !important;
+  padding: 0.5em 1em;
+  font-size: 14px !important;
+  color: #333;
+}
+
+.section-VEGASGIVEAWAY {
+  background-color: rgba(0,0,0,0.05);
+  margin-bottom: 0 !important;
+  padding-bottom: 50px;
+}
+
+.template-index .section-VEGASGIVEAWAY .multicolumn-list {
+  padding: 75px 0;
+}
+.template-index .section-VEGASGIVEAWAY .multicolumn-list__item .multicolumn-card {
+  box-shadow: 0px 20px 50px 0px rgb(0 0 0 / 10%);
+  border-radius: 5px;
+  background: #fff;
+}
+
+.template-index .section-VEGASGIVEAWAY .multicolumn-list__item h3, .template-index .section-VEGASGIVEAWAY .multicolumn-list__item p {
+color: #333333;
+}
+
+.template-index .section-BEETS {
+ /* Multicolumn Beets, etc */
+  margin-bottom: 75px !important;
+}
+.template-index .section-BEETS li:nth-child(2n+1) .multicolumn-card {
+  background-color: #d14762;
+}
+.template-index .section-BEETS li:nth-child(2n+0) .multicolumn-card {
+  background-color: #aaa;
+}
+@media screen and (max-width: 749px) {
+  .template-index .section-BEETS {
+    margin-bottom: 0 !important;
+ }
+}
+.template-index .section-LIONSMANE {
+  margin-top: 10px !important;
+}
+.template-index .section-LIONSMANE li:nth-child(2n+0) .multicolumn-card {
+  background-color: #d14762;
+}
+.template-index .section-LIONSMANE li:nth-child(2n+1) .multicolumn-card {
+  background-color: #aaa;
+}
+
+@media screen and (max-width: 749px) {
+  .template-index .multicolumn-list__item {
+    margin-bottom: 7rem !important;
+  }
+}
+
+/* Blog Post */
+#shopify-section-template--15523737927929__16434196510ccbca45 {
+  background-color: #f5f6f7;
+  padding: 20px 0;
+}
+#shopify-section-template--15523737927929__16434196510ccbca45 h2.title {
+  text-align: center;
+  margin: 0 auto;
+}
+li#Slide-template--15523737927929__16434196510ccbca45-1 {
+  max-width: 75%;
+}
+li#Slide-template--15523737927929__16434196510ccbca45-1 .multicolumn-card__info h3, li#Slide-template--15523737927929__16434196510ccbca45-1 .multicolumn-card__info p {
+  color: #333333;
+}

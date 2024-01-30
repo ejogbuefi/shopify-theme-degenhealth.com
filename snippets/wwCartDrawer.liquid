@@ -1,0 +1,16 @@
+{% capture settingsJson %}
+{
+    "start_shopping_url": "/collections/all"
+    ,"progressBar__threshold": "75"
+    ,"progressBar__before": "Free Shipping, All Orders $75+"
+    ,"progressBar__during": "You're {moneyFrom} away from free shipping!"
+    ,"progressBar__after": "Free Shipping Unlocked!"
+}
+{% endcapture %}
+
+<div id="wwVue-CartDrawer"
+    data-content="{{ settingsJson | strip_newlines | strip | escape }}"
+></div>
+
+
+    {{ "x1xx-WwCart-drawer.js" | asset_url | script_tag }}

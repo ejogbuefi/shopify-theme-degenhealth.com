@@ -1,0 +1,14 @@
+<div id="vue-custom-tracking"
+    data-init="{
+        &quot;shop_url&quot;: &quot;{{shop.url}}&quot;,
+        &quot;myshopify_url&quot;: &quot;{{shop.permanent_domain}}&quot;,
+        &quot;template_name&quot;: &quot;{{template.name}}&quot;,
+        &quot;template_suffix&quot;: &quot;{{template.suffix}}&quot;,
+        &quot;customerEmail&quot;: &quot;{{customer.email}}&quot;,
+        &quot;customerId&quot;: &quot;{{customer.id}}&quot;,
+        &quot;currency_code&quot;: &quot;{{cart.currency.iso_code}}&quot;
+    }"
+    {% if product %}data-product="{{ product | json | escape }}"{% endif %}
+>
+</div>
+{{ "CustomTracking-x1xx.js" | asset_url | script_tag }}

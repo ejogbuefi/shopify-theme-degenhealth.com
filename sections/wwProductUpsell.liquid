@@ -1,0 +1,70 @@
+{% comment %}
+Product Upsell App!
+- ProductOffer Defaults Can be Set Via Admin
+{% endcomment %}
+
+{% capture defaultOfferJson %}
+[
+{% for block in section.blocks %}
+   {% assign default_product = block.settings.product %}
+    {
+        "product_id": "{{ default_product.id | default: default_product }}"
+    }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
+{% endcapture %}
+
+{% capture contentJson %}
+{
+    "heading": "{{ section.settings.app_heading }}",
+    "subheading": "{{ section.settings.app_subheading }}"
+}
+{% endcapture %}
+
+{% assign routeLineItems = cart.lines %}
+{% if checkout %}
+{% assign routeLineItems = checkout.line_items %}
+{% endif %}
+
+<div id="wwVue-ProductUpsell"
+    data-default-offers="{{ defaultOfferJson | strip_newlines | strip_html | strip | escape }}",
+    data-cart-product-ids="[{% for line in routeLineItems %}&quot;{{ line.product.id }},{{ line.product.handle }}&quot;{% unless forloop.last %},{% endunless %}{% endfor %}]"
+    data-content="{{ contentJson | strip_newlines | strip_html | strip | escape }}"
+></div>
+
+
+    {{ "x1xx-WwProduct-upsell.js" | asset_url | script_tag }}
+
+
+{% schema %}
+{
+    "name":"ProductUpsell",
+    "tag":"div",
+    "settings":[
+       {
+          "type":"text",
+          "id":"app_heading",
+          "label":"Heading",
+          "default":"People also like"
+       },
+       {
+          "type":"text",
+          "id":"app_subheading",
+          "label":"Sub-Heading"
+       }
+    ],
+    "blocks":[
+       {
+          "name":"Product Offer",
+          "type":"product",
+          "settings":[
+             {
+                "type":"product",
+                "id":"product",
+                "label":"Product"
+             }
+          ]
+       }
+    ]
+ }
+{% endschema %}
